@@ -1,0 +1,6 @@
+#!/bin/bash
+# Wrapper fuer macOS Login Items: der eindeutige Dateiname (odysseus-ui) wird in
+# System Settings -> Login Items & Extensions sichtbar statt des generischen
+# "bash". Startet die Odysseus-Oberflaeche ueber start-macos.sh.
+# Seit 11.08.2026 versioniert (eigener Fork moritzdagee/odysseus, Zweig dev).
+exec /bin/bash "/Users/moritzcremer/odysseus/start-macos.sh"
