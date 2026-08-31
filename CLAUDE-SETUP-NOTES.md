@@ -24,11 +24,11 @@ source only: https://github.com/pewdiepie-archdaemon/odysseus
 ## Always-on background services (macOS LaunchAgents)
 Two services, kept alive + auto-started at login by macOS:
 
-1. `ai.odysseus.chromadb` — the smart-memory database (ChromaDB) on port 8100
-   - Plist: `/Users/moritzcremer/Library/LaunchAgents/ai.odysseus.chromadb.plist`
+1. `claude.macbook.odysseus.chromadb` — the smart-memory database (ChromaDB) on port 8100
+   - Plist: `/Users/moritzcremer/Library/LaunchAgents/claude.macbook.odysseus.chromadb.plist`
    - Logs: `/tmp/odysseus-chromadb.{out,err}.log`
-2. `ai.odysseus.ui` — the Odysseus app itself on port 7860
-   - Plist: `/Users/moritzcremer/Library/LaunchAgents/ai.odysseus.ui.plist`
+2. `claude.macbook.odysseus.ui` — the Odysseus app itself on port 7860
+   - Plist: `/Users/moritzcremer/Library/LaunchAgents/claude.macbook.odysseus.ui.plist`
    - Runs `start-macos.sh`; browser auto-open disabled (ODYSSEUS_NO_OPEN=1)
    - Logs: `/tmp/odysseus-ui.{out,err}.log`
 
@@ -40,19 +40,19 @@ Available: llama3.1:8b, gemma4:12b, deepseek-r1:8b, deepseek-r1:14b, qwen3:14b.
 ## Manage the services
 ```bash
 U=$(id -u)
-# restart app:        launchctl kickstart -k gui/$U/ai.odysseus.ui
-# restart memory DB:  launchctl kickstart -k gui/$U/ai.odysseus.chromadb
-# stop (this session):launchctl bootout gui/$U/ai.odysseus.ui
+# restart app:        launchctl kickstart -k gui/$U/claude.macbook.odysseus.ui
+# restart memory DB:  launchctl kickstart -k gui/$U/claude.macbook.odysseus.chromadb
+# stop (this session):launchctl bootout gui/$U/claude.macbook.odysseus.ui
 # status:             launchctl list | grep odysseus
 ```
 
 ## Full uninstall (reverse everything)
 ```bash
 U=$(id -u)
-launchctl bootout gui/$U/ai.odysseus.ui 2>/dev/null
-launchctl bootout gui/$U/ai.odysseus.chromadb 2>/dev/null
-rm /Users/moritzcremer/Library/LaunchAgents/ai.odysseus.ui.plist
-rm /Users/moritzcremer/Library/LaunchAgents/ai.odysseus.chromadb.plist
+launchctl bootout gui/$U/claude.macbook.odysseus.ui 2>/dev/null
+launchctl bootout gui/$U/claude.macbook.odysseus.chromadb 2>/dev/null
+rm /Users/moritzcremer/Library/LaunchAgents/claude.macbook.odysseus.ui.plist
+rm /Users/moritzcremer/Library/LaunchAgents/claude.macbook.odysseus.chromadb.plist
 rm -rf /Users/moritzcremer/odysseus      # removes app + all local data
 # Optional (only if you don't want them anymore):
 #   brew uninstall llama.cpp tmux python@3.11
@@ -62,7 +62,7 @@ rm -rf /Users/moritzcremer/odysseus      # removes app + all local data
 ## MCP connectors added to Odysseus (2026-06-06)
 - **Assistant_Data** (the CURRENT knowledge base) — connected, 20 tools.
   - Transport: Streamable HTTP → `https://127.0.0.1:8765/mcp`
-    (service `com.assistant_data.mcp-http`, port 8765, Postgres-backed).
+    (service `claude.macbook.datenbank.mcp-http`, port 8765, Postgres-backed).
   - The OLD stdio connector `assistantdata-knowledge`
     (`/usr/bin/python3 .../assistant_data/src/mcp_server/server.py`) was
     registered by mistake and REMOVED — it is deprecated, do not use it.
