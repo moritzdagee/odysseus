@@ -1,3 +1,12 @@
+## 2026-09-24 Autostart-Dateien versioniert
+
+Auftrag Moritz "keinerlei rumfliegende Skripte". `claude.macbook.odysseus.chromadb.plist` und
+`claude.macbook.odysseus.ui.plist` lagen nur in `~/Library/LaunchAgents/`. Byte fuer Byte nach
+`deploy/launchagents/` uebernommen, Installationsweg (vergleichen, nur bei Abweichung kopieren
+und neu laden) in `deploy/launchagents/LIESMICH.md`. Heute nichts kopiert und nichts neu
+geladen, beide Dienste liefen vorher und nachher. Rueckweg: Ordner entfernen, die Live-Dateien
+sind unberuehrt. Pruefprogramm gegen neue lose Dateien: vibe-suite `scripts/lose_skripte_pruefen.py`.
+
 ## 2026-08-11 Zweig-Aufraeumen nach Bestandsaufnahme (Protokoll)
 
 Anlass: Bestandsaufnahme vom 11.08. fand suite-weit rund 120 liegengebliebene
