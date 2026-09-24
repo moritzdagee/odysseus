@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>CHROMADB_HOST</key>
+		<string>localhost</string>
+		<key>CHROMADB_PORT</key>
+		<string>8100</string>
+		<key>HOME</key>
+		<string>/Users/moritzcremer</string>
+		<key>ODYSSEUS_NO_OPEN</key>
+		<string>1</string>
+		<key>ODYSSEUS_PORT</key>
+		<string>7860</string>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/opt/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>claude.macbook.odysseus.ui</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/moritzcremer/odysseus/odysseus-ui</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/odysseus-ui.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/odysseus-ui.out.log</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/moritzcremer/odysseus</string>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>ANONYMIZED_TELEMETRY</key>
+		<string>False</string>
+		<key>HOME</key>
+		<string>/Users/moritzcremer</string>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/opt/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>claude.macbook.odysseus.chromadb</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/moritzcremer/odysseus/venv/bin/chroma</string>
+		<string>run</string>
+		<string>--host</string>
+		<string>localhost</string>
+		<string>--port</string>
+		<string>8100</string>
+		<string>--path</string>
+		<string>/Users/moritzcremer/odysseus/data/chroma</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/odysseus-chromadb.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/odysseus-chromadb.out.log</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/moritzcremer/odysseus</string>
+</dict>
+</plist>
